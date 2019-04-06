@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscar por Titulo</title>
+</head>
+<body>
+    <div id="center">
+        {%if error%}
+        {{error}}
+        {%endif%}
+        
+        {%if professores%}
+        <h2>Professores encontrados:</h2>
+        {%if professores%}
+        {%for i in professores%} <br>
+        <a href="/exibirProfessor/{{i[0]}}"><b>{{i[0]}}</b></a><br>
+        {%endfor%}
+        {%endif%}
+
+        {%endif%}
+        
+        <h2>Buscar Por titulo</h2>
+        <form action="/restit" method="POST">
+                <input type="radio" name="tit" value="1" checked> especializado<br>
+                <input type="radio" name="tit" value="2"> mestre<br>
+                <input type="radio" name="tit" value="3"> doutor<br>
+                <input type="submit" value="pesquisar">
+        </form>
+    </div>
+</body>
+</html>

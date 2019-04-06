@@ -1,0 +1,16 @@
+#center{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,-50%);
+}
+
+body{
+    background-color: cyan;
+}
+
+span#error{
+    text-decoration-color: crimson;
+    text-align: center;
+    font-style: oblique;
+}
